@@ -11,9 +11,9 @@ body {
   font-size: 16px;
   padding: 1vh 8px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   body {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
@@ -164,7 +164,7 @@ body {
 
 .trig input:checked ~ .dropdown-tr-list {
   display: grid;
-  grid-template-columns: repeat(3, 30px);
+  grid-template-columns: repeat(3, 40px);
   gap: 4px;
   text-align: center;
   background-color: #4f4f4f;
@@ -215,7 +215,7 @@ body {
 
 .func input:checked ~ .dropdown-f-list {
   display: grid;
-  grid-template-columns: repeat(3, 30px);
+  grid-template-columns: repeat(3, 40px);
   gap: 4px;
   text-align: center;
   background-color: #4f4f4f;
