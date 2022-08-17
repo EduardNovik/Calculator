@@ -1,0 +1,282 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    max-width: 1440px;
+    min-width: 375px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 1vh 8px;
+    @media screen and (min-width: 768px){ 
+        font-size: 16px;
+    }
+}
+
+.bg{
+    background-color: rgba(0, 0, 0, 0.854);
+}
+
+
+.bg-hover{ 
+    &:hover{
+        background-color:rgba(128, 128, 128, 0.349);
+        border: 1px solid gray;
+    }
+}
+.bg-hover2{ 
+    &:hover{
+        background-color:rgba(228, 228, 228, 0.39);
+        border: 1px solid gray;
+    }
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.bg-dgrey {
+    background-color: rgba(0, 0, 0, 0.186);
+}
+.bg-mdgrey {
+    background-color: rgba(0, 0, 0, 0.83);
+}
+.bg-lgrey{
+    background-color: rgba(75, 72, 72, 0.948);
+}
+
+.txt-grey{
+    color: rgba(137, 136, 136, 0.385);
+}
+
+.align-vert{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: rgba(0, 0, 0, 0.854);
+    height: 33vh;
+    min-height: 250px;
+    text-align: center;
+}
+
+
+
+    .div01 { 
+        grid-area: 1 / 6 / 5 / 7; 
+        text-align: right;
+        font-weight: 500; 
+        font-size: 50px;
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+
+    .div02 { grid-area: 5 / 1 / 6 / 2; }
+    .div03 { grid-area: 5 / 2 / 6 / 3; }
+    .div04 { grid-area: 6 / 1 / 7 / 2; }
+    .div05 { grid-area: 6 / 2 / 7 / 3; }
+    .div06 { grid-area: 6 / 3 / 7 / 4; }
+    .div07 { grid-area: 6 / 4 / 7 / 5; }
+    .div08 { grid-area: 6 / 5 / 7 / 6; }
+
+    .div09 { 
+        grid-area: 6 / 6 / 7 / 7;
+        @media screen and (min-width: 768px){ 
+            display: none;
+        }
+     }
+     
+    .div010 { grid-area: 7 / 1 / 8 / 4; }
+    .div011 { grid-area: 7 / 4 / 8 / 7; }
+
+
+
+.function-block {
+    display: flex;
+    align-items: center;
+    gap: 10px   ;
+}
+
+.trig{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    height: 5vh;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+    input{
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+.trig label::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-color: white;
+    transform: rotateZ(45deg);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.trig {
+    input:checked {
+        & ~ .dropdown-tr-list{
+            display: grid;
+            grid-template-columns: repeat(3, 30px);
+            gap: 4px;
+            text-align: center;
+            background-color: #4f4f4f;
+            border: 1px solid white;
+        }
+    }
+}
+
+.trig {
+    input:checked {
+        & ~ label::after {
+            transform: rotateZ(-135deg);
+        }
+    }
+}
+
+.dropdown-tr-list {
+    display: none;
+    position: absolute;
+    top: 35px;
+  }
+
+
+.func{
+    display: flex;
+    justify-content: center;
+    min-width: 150px;
+    position: relative;
+    cursor: pointer;
+    height: 5vh;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+    input{
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+.func label::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-color: white;
+    transform: rotateZ(45deg);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+  
+
+
+.func {
+    input:checked {
+        & ~ .dropdown-f-list{
+            display: grid;
+            grid-template-columns: repeat(3, 30px);
+            gap: 4px;
+            text-align: center;
+            background-color: #4f4f4f;
+            border: 1px solid white;
+        }
+    }
+}
+
+.func {
+    input:checked {
+        & ~ label::after {
+            transform: rotateZ(-135deg);
+        }
+    }
+}
+
+.dropdown-f-list {
+    display: none;
+    position: absolute;
+    top: 35px;
+  }
+
+
+
+    .parent2 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 2px;
+        background-color: rgba(0, 0, 0, 0.854);
+        min-height: 60vh;
+        text-align: center;
+        }
+        
+        .div1 { grid-area: 1 / 1 / 2 / 2; }
+        .div2 { grid-area: 1 / 2 / 2 / 3; }
+        .div3 { grid-area: 1 / 3 / 2 / 4; }
+        .div4 { grid-area: 1 / 4 / 2 / 5; }
+        .div5 { grid-area: 1 / 5 / 2 / 6; }
+        .div6 { grid-area: 2 / 1 / 3 / 2; }
+        .div7 { grid-area: 2 / 2 / 3 / 3; }
+        .div8 { grid-area: 2 / 3 / 3 / 4; }
+        .div9 { grid-area: 2 / 4 / 3 / 5; }
+        .div10 { grid-area: 2 / 5 / 3 / 6; }
+        .div11 { grid-area: 3 / 1 / 4 / 2; }
+        .div12 { grid-area: 3 / 2 / 4 / 3; }
+        .div13 { grid-area: 3 / 3 / 4 / 4; }
+        .div14 { grid-area: 3 / 4 / 4 / 5; }
+        .div15 { grid-area: 3 / 5 / 4 / 6; }
+        .div16 { grid-area: 4 / 1 / 5 / 2; }
+        .div17 { grid-area: 4 / 2 / 5 / 3; }
+        .div18 { grid-area: 4 / 3 / 5 / 4; }
+        .div19 { grid-area: 4 / 4 / 5 / 5; }
+        .div20 { grid-area: 4 / 5 / 5 / 6; }
+        .div21 { grid-area: 5 / 1 / 6 / 2; }
+        .div22 { grid-area: 5 / 2 / 6 / 3; }
+        .div23 { grid-area: 5 / 3 / 6 / 4; }
+        .div24 { grid-area: 5 / 4 / 6 / 5; }
+        .div25 { grid-area: 5 / 5 / 6 / 6; }
+        .div26 { grid-area: 6 / 1 / 7 / 2; }
+        .div27 { grid-area: 6 / 2 / 7 / 3; }
+        .div28 { grid-area: 6 / 3 / 7 / 4; }
+        .div29 { grid-area: 6 / 4 / 7 / 5; }
+        .div30 { grid-area: 6 / 5 / 7 / 6; }
+        .div31 { grid-area: 7 / 1 / 8 / 2; }
+        .div32 { grid-area: 7 / 2 / 8 / 3; }
+        .div33 { grid-area: 7 / 3 / 8 / 4; }
+        .div34 { grid-area: 7 / 4 / 8 / 5; }
+        .div35 { grid-area: 7 / 5 / 8 / 6; }
